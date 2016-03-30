@@ -1,0 +1,17 @@
+{
+  "name": "icon-font-generator",
+  "version": "1.0.1",
+  "description": "Simplified, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
+  "main": "index.js",
+  "bin": {
+    "icon-font-generator": "bin/icon-font-generator"
+  },
+  "scripts": {},
+  "author": "Tancredi Trugenberger",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "minimist": "^1.2.0",
+    "webfonts-generator": "^0.3.3"
+  }
+}

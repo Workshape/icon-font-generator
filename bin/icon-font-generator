@@ -1,0 +1,96 @@
+#! /usr/bin/env node
+
+'strict mode';
+
+require('colors');
+
+var fontGenerator = require('../lib/index'),
+    errors = require('../lib/errors'),
+    minimist = require('minimist');
+
+/*
+ * Initialise script and options
+ */
+function init() {
+    var args = minimist(process.argv.slice(2)),
+        options = {
+            paths        : args._ || [],
+            outputDir    : args.o || args.out,
+            fontName     : args.n || args.name,
+            fontsPath    : args.f || args.fontspath,
+            css          : args.c || args.css,
+            cssPath      : args.csspath,
+            cssTemplate  : args.csstp,
+            json         : args.j || args.json,
+            jsonPath     : args.jsonpath,
+            html         : args.h || args.html,
+            htmlPath     : args.htmlpath,
+            htmlTemplate : args.htmltp,
+            silent       : args.s || args.silent || false,
+            classPrefix  : args.p || args.prefix,
+            baseTag      : args.t || args.tag
+        },
+        calledEmpty = Object.keys(args).length === 1 && args._.length === 0;
+
+    if (args.h || args.help || calledEmpty) {
+        showHelp();
+        process.exit();
+    }
+
+    run(options);
+}
+
+/*
+ * Run icon font kit creation
+ *
+ * @param {Object} options
+ */
+function run(options) {
+    fontGenerator.generate(options, function (err) {
+        if (err) { return fail(err); }
+    });
+}
+
+/*
+ * Fail - Interrut process and log validation errors or throw unhandled exceptions
+ *
+ * @param {Error|ValidationError} err
+ */
+function fail(err) {
+    if (typeof err === 'string' || err instanceof errors.ValidationError) {
+        console.error(err.message.red);
+        process.exit();
+    }
+
+    if (err instanceof Error) {
+        throw err;
+    }
+}
+
+/*
+ * Display usage
+ */
+function showHelp() {
+    console.log(
+        'Usage   :'.bold + ' icon-font-generator [ svg-icons-glob ] -o [ output-dir ] [ options ]\n' + 
+        'Example :'.bold + ' icon-font-generator src/*.svg -o dist\n\n' + 
+
+        'Options:\n'.bold +
+        '  -o, --out        '.bold + 'Output icon font set files to <out> directory\n'.italic +
+        '  -n, --name       '.bold + 'Name to use for generated fonts and files (Default: icons)\n' +
+        '  -s, --silent     '.bold + 'Do not produce output logs other than errors (Default: false)\n' +
+        '  -f, --fontspath  '.bold + 'Relative path to fonts directory to use in outpit files (Default: ./)\n' +
+        '  -c, --css        '.bold + 'Generate CSS file if true (Default: true)\n' +
+        '  --csspath        '.bold + 'CSS output path (Defaults to <out>/<name>.css)\n' +
+        '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +
+        '  -h, --html       '.bold + 'Generate HTML preview file if true (Default: true)\n' +
+        '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
+        '  --htmtp          '.bold + 'HTML handlebars template path (Optional)\n' +
+        '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
+        '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
+        '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +
+        '  -t, --tag        '.bold + 'CSS base selector for icons (Default: i)'
+    );
+}
+
+init();
