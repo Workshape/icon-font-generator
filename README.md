@@ -50,4 +50,4 @@ Options:
 
 ### Licence
 
-Copyright (c) 2014 Workshape.io Ltd. - Released under the MIT license
+Copyright (c) 2014 Workshape.io Ltd. - Released under the [MIT license](https://github.com/Workshape/icon-font-generator/blob/master/LICENSE)
