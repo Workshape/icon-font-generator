@@ -44,7 +44,12 @@ Options:
   -j, --json       Generate JSON map file if true (Default: true)
   --jsonpath       JSON output path (Defaults to <out>/<name>.json)
   -p, --prefix     CSS classname prefix for icons (Default: icon)
-  -t, --tag        CSS base selector for icons (Default: i)
+  -t, --tag        CSS base selector for icons (Default: i)  --normalize      Normalize icons sizes (Default: false)
+  --round          Setup SVG rounding (Default: 10e12)
+  --descent        Offset applied to the baseline (Default: 0)
+  --mono           Make font monospace (Default: false)
+  --height         Fixed font height value
+  --center         Center font horizontally
 ```
 
 
