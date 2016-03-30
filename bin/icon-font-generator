@@ -79,7 +79,7 @@ function showHelp() {
         '  -o, --out        '.bold + 'Output icon font set files to <out> directory\n'.italic +
         '  -n, --name       '.bold + 'Name to use for generated fonts and files (Default: icons)\n' +
         '  -s, --silent     '.bold + 'Do not produce output logs other than errors (Default: false)\n' +
-        '  -f, --fontspath  '.bold + 'Relative path to fonts directory to use in outpit files (Default: ./)\n' +
+        '  -f, --fontspath  '.bold + 'Relative path to fonts directory to use in output files (Default: ./)\n' +
         '  -c, --css        '.bold + 'Generate CSS file if true (Default: true)\n' +
         '  --csspath        '.bold + 'CSS output path (Defaults to <out>/<name>.css)\n' +
         '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +

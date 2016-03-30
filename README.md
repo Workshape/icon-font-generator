@@ -2,7 +2,7 @@
 
 ![Screenshot](http://i.cubeupload.com/IMOHPK.png)
 
-> Simplified, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files
+> Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files
 
 ### Intro
 
@@ -34,7 +34,7 @@ Options:
   -o, --out        Output icon font set files to <out> directory
   -n, --name       Name to use for generated fonts and files (Default: icons)
   -s, --silent     Do not produce output logs other than errors (Default: false)
-  -f, --fontspath  Relative path to fonts directory to use in outpit files (Default: ./)
+  -f, --fontspath  Relative path to fonts directory to use in output files (Default: ./)
   -c, --css        Generate CSS file if true (Default: true)
   --csspath        CSS output path (Defaults to <out>/<name>.css)
   --csstp          CSS handlebars template path (Optional)
