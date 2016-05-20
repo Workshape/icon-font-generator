@@ -1,6 +1,6 @@
 # Node.js
 node_modules
-npm_debug.log
+npm-debug.log
 
 # OSX
 **.DS_Store
