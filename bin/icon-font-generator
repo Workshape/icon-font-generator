@@ -23,7 +23,7 @@ function init() {
             cssTemplate        : args.csstp,
             json               : args.j || args.json,
             jsonPath           : args.jsonpath,
-            html               : args.h || args.html,
+            html               : args.html,
             htmlPath           : args.htmlpath,
             htmlTemplate       : args.htmltp,
             silent             : args.s || args.silent || false,
@@ -37,6 +37,13 @@ function init() {
             centerHorizontally : args.center
         },
         calledEmpty = Object.keys(args).length === 1 && args._.length === 0;
+
+    // Parse Boolean values that default to true
+    [ 'html', 'css', 'json' ].forEach(function (key) {
+        if (typeof options[key] !== 'undefined') {
+            options[key] = options[key] === 'true';
+        }
+    });
 
     // Show usage if missing any arguments or called with -h / --help
     if (args.h || args.help || calledEmpty) {
@@ -79,8 +86,8 @@ function fail(err) {
  */
 function showHelp() {
     console.log(
-        'Usage   :'.bold + ' icon-font-generator [ svg-icons-glob ] -o [ output-dir ] [ options ]\n' + 
-        'Example :'.bold + ' icon-font-generator src/*.svg -o dist\n\n' + 
+        'Usage   :'.bold + ' icon-font-generator [ svg-icons-glob ] -o [ output-dir ] [ options ]\n' +
+        'Example :'.bold + ' icon-font-generator src/*.svg -o dist\n\n' +
 
         'Options:\n'.bold +
         '  -o, --out        '.bold + 'Output icon font set files to <out> directory\n'.italic +
@@ -90,7 +97,7 @@ function showHelp() {
         '  -c, --css        '.bold + 'Generate CSS file if true (Default: true)\n' +
         '  --csspath        '.bold + 'CSS output path (Defaults to <out>/<name>.css)\n' +
         '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +
-        '  -h, --html       '.bold + 'Generate HTML preview file if true (Default: true)\n' +
+        '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
         '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
         '  --htmtp          '.bold + 'HTML handlebars template path (Optional)\n' +
         '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +

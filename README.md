@@ -38,7 +38,7 @@ Options:
   -c, --css        Generate CSS file if true (Default: true)
   --csspath        CSS output path (Defaults to <out>/<name>.css)
   --csstp          CSS handlebars template path (Optional)
-  -h, --html       Generate HTML preview file if true (Default: true)
+  --html       Generate HTML preview file if true (Default: true)
   --htmlpath       HTML output path (Defaults to <out>/<name>.html)
   --htmtp          HTML handlebars template path (Optional)
   -j, --json       Generate JSON map file if true (Default: true)
