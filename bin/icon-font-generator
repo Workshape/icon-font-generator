@@ -18,6 +18,7 @@ function init() {
             outputDir          : args.o || args.out,
             fontName           : args.n || args.name,
             fontsPath          : args.f || args.fontspath,
+            types              : (args.types || 'svg,ttf,woff,eot').split(','),
             css                : args.c || args.css,
             cssPath            : args.csspath,
             cssTemplate        : args.csstp,
@@ -95,6 +96,7 @@ function showHelp() {
         '  -s, --silent     '.bold + 'Do not produce output logs other than errors (Default: false)\n' +
         '  -f, --fontspath  '.bold + 'Relative path to fonts directory to use in output files (Default: ./)\n' +
         '  -c, --css        '.bold + 'Generate CSS file if true (Default: true)\n' +
+        '  --types          '.bold + 'Comma delimited list of font types (Defaults to svg,ttf,woff,eot)\n' +
         '  --csspath        '.bold + 'CSS output path (Defaults to <out>/<name>.css)\n' +
         '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +
         '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
