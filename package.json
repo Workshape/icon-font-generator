@@ -1,6 +1,6 @@
 {
   "name": "icon-font-generator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
   "main": "index.js",
   "repository" : { "type" : "git", "url" : "https://github.com/Workshape/icon-font-generator.git" },
