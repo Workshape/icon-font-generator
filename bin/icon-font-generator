@@ -13,7 +13,10 @@ var fontGenerator = require('../lib/index'),
  */
 function init() {
     var args = minimist(process.argv.slice(2)),
-        options = {
+    if(args._.length == 1 && args._[0].indexOf('*') !== false) {
+        args._ = glob.sync(args._[0]);
+    }
+    var options = {
             paths              : args._ || [],
             outputDir          : args.o || args.out,
             fontName           : args.n || args.name,

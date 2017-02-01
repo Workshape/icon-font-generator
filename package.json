@@ -13,6 +13,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "minimist": "^1.2.0",
-    "webfonts-generator": "^0.3.3"
+    "webfonts-generator": "^0.3.3",
+    "glob": "^7.1.1"
   }
 }
