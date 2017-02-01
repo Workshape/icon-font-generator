@@ -12,10 +12,12 @@ var fontGenerator = require('../lib/index'),
  * Initialise script and options
  */
 function init() {
-    var args = minimist(process.argv.slice(2)),
-    if(args._.length == 1 && args._[0].indexOf('*') !== false) {
+    var args = minimist(process.argv.slice(2));
+
+    if (args._.length == 1 && args._[0].indexOf('*') !== false) {
         args._ = glob.sync(args._[0]);
     }
+
     var options = {
             paths              : args._ || [],
             outputDir          : args.o || args.out,
