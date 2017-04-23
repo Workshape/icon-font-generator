@@ -42,8 +42,9 @@
   },
   "scripts": {
     "build": "rm -rf lib/* && babel src --ignore *.spec.js --out-dir lib --copy-files --source-maps",
-    "watch": "babel -w -d ./lib ./src",
     "lint": "eslint src/**",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "prepublish": "npm run build",
+    "watch": "babel -w -d ./lib ./src"
   }
 }
