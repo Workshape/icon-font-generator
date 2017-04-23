@@ -1,19 +1,41 @@
 {
   "name": "icon-font-generator",
-  "version": "1.0.7",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
-  "main": "index.js",
-  "repository" : { "type" : "git", "url" : "https://github.com/Workshape/icon-font-generator.git" },
+  "version": "1.0.7",
+  "author": "Tancredi Trugenberger",
   "bin": {
     "icon-font-generator": "bin/icon-font-generator"
   },
-  "scripts": {},
-  "author": "Tancredi Trugenberger",
-  "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
+    "glob": "^7.1.1",
     "minimist": "^1.2.0",
-    "webfonts-generator": "^0.3.3",
-    "glob": "^7.1.1"
+    "webfonts-generator": "^0.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.2.2"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote true --trailing-comma all --print-width 60",
+      "git add"
+    ]
+  },
+  "main": "index.js",
+  "pre-commit": "lint:staged",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Workshape/icon-font-generator.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/**",
+    "lint:staged": "lint-staged"
   }
 }
