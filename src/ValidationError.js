@@ -1,4 +1,4 @@
-'strict mode';
+// @flow
 
 /*
  * Validation error (Extends Error)
@@ -12,6 +12,4 @@ function ValidationError(message) {
 // Extend Error
 ValidationError.prototype = Object.create(Error.prototype);
 
-module.exports = {
-  ValidationError,
-};
+export default ValidationError;

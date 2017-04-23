@@ -1,38 +1,39 @@
-'strict mode';
+// @flow
 
-require('colors');
+import fs from 'fs';
+import path from 'path';
+import 'colors';
+import fontGenerator from 'webfonts-generator';
+import ValidationError from './ValidationError';
 
-var errors = require('./errors'),
-  fs = require('fs'),
-  path = require('path'),
-  fontGenerator = require('webfonts-generator');
+const FONT_TYPES = ['svg', 'ttf', 'woff', 'eot'];
+const TEMPLATES = {
+  html: path.resolve(__dirname, '../template/html.hbs'),
+  css: path.resolve(__dirname, '../template/css.hbs'),
+  js: path.resolve(__dirname, '../template/js.hbs'),
+};
+const GEN_PARAMS = [
+  'css',
+  'html',
+  'js',
+  'fontName',
+  'classPrefix',
+  'normalize',
+  'round',
+  'fixedWidth',
+  'fontHeight',
+  'descent',
+  'fontHeight',
+  'centerHorizontally',
+];
 
-var FONT_TYPES = ['svg', 'ttf', 'woff', 'eot'],
-  TEMPLATES = {
-    html: path.resolve(__dirname, '../template/html.hbs'),
-    css: path.resolve(__dirname, '../template/css.hbs'),
-  },
-  GEN_PARAMS = [
-    'css',
-    'html',
-    'fontName',
-    'classPrefix',
-    'normalize',
-    'round',
-    'fixedWidth',
-    'fontHeight',
-    'descent',
-    'fontHeight',
-    'centerHorizontally',
-  ];
-
-/*
+/**
  * Generate icon font set asynchronously
  *
  * @param {Object} options
  * @param {Function} callback
  */
-exports.generate = function(options, callback) {
+export function generate(options, callback) {
   callback = callback || function() {};
 
   // Populate default arguments
@@ -62,8 +63,8 @@ exports.generate = function(options, callback) {
   );
 
   /*
-     * Log success and trigger callback
-     */
+   * Log success and trigger callback
+   */
   function done() {
     log(options, 'Done'.green);
     callback();
@@ -135,6 +136,8 @@ exports.generate = function(options, callback) {
         ]);
       }
 
+      console.log('result: ', Object.keys(result));
+
       // If specified, generate JSON icons map by parsing the generated CSS
       if (options.json) {
         var map = {},
@@ -166,9 +169,9 @@ exports.generate = function(options, callback) {
       }
     });
   });
-};
+}
 
-/*
+/**
  * Log output file generation
  *
  * @param {Object} options
@@ -181,7 +184,7 @@ function logOutput(options, parts) {
   );
 }
 
-/*
+/**
  * Log message unless configured to run silent
  *
  * @param {Object} options
@@ -195,7 +198,7 @@ function log(options, message) {
   console.log(message);
 }
 
-/*
+/**
  * Asynchronously validate generation options, check existance of given files
  * and directories
  *
@@ -206,14 +209,14 @@ function validate(options, callback) {
   // Check that input glob was passed
   if (!options.paths.length) {
     return callback(
-      new errors.ValidationError('No paths specified'),
+      new ValidationError('No paths specified'),
     );
   }
 
   // Check that output path was passed
   if (!options.outputDir) {
     return callback(
-      new errors.ValidationError(
+      new ValidationError(
         'Please specify an output directory with -o or --output',
       ),
     );
@@ -223,7 +226,7 @@ function validate(options, callback) {
   fs.exists(options.outputDir, exists => {
     if (!exists) {
       return callback(
-        new errors.ValidationError(
+        new ValidationError(
           "Output directory doesn't exist",
         ),
       );
@@ -237,7 +240,7 @@ function validate(options, callback) {
 
       if (!stats.isDirectory()) {
         return callback(
-          new errors.ValidationError(
+          new ValidationError(
             'Output path must be a directory',
           ),
         );
@@ -248,7 +251,7 @@ function validate(options, callback) {
         fs.exists(options.htmlTemplate, exists => {
           if (!exists) {
             return callback(
-              new errors.ValidationError(
+              new ValidationError(
                 'HTML template not found',
               ),
             );
