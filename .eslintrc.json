@@ -1,0 +1,26 @@
+{
+  "extends": [ "eslint:recommended" ],
+  "parserOptions": {
+    "ecmaVersion"  : 6,
+    "sourceType"   : "module",
+    "ecmaFeatures" : {}
+  },
+  "rules"          : {
+    "indent"                  : [ "error", 2 ],
+    "linebreak-style"         : [ "error", "unix" ],
+    "quotes"                  : [ "error", "single" ],
+    "no-unused-vars"          : [ "error" ],
+    "no-extra-semi"           : [ "error" ],
+    "no-unexpected-multiline" : [ "error" ],
+    "semi"                    : [ "error", "never" ],
+    "one-var"                 : [ "error", "never" ],
+    "padded-blocks"           : [ "error", "never" ],
+    "no-console"              : 0,
+    "padded-blocks"           : 0,
+    "no-trailing-spaces"      : [ "error", { "skipBlankLines": false } ]
+  },
+  "env"            : {
+    "browser" : true,
+    "node"    : true
+  }
+}

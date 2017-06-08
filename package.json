@@ -1,9 +1,12 @@
 {
   "name": "icon-font-generator",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
   "main": "index.js",
-  "repository" : { "type" : "git", "url" : "https://github.com/Workshape/icon-font-generator.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Workshape/icon-font-generator.git"
+  },
   "bin": {
     "icon-font-generator": "bin/icon-font-generator"
   },
@@ -11,9 +14,10 @@
   "author": "Tancredi Trugenberger",
   "license": "MIT",
   "dependencies": {
+    "async": "^2.4.1",
     "colors": "^1.1.2",
+    "glob": "^7.1.2",
     "minimist": "^1.2.0",
-    "webfonts-generator": "^0.3.3",
-    "glob": "^7.1.1"
+    "webfonts-generator": "^0.4.0"
   }
 }
