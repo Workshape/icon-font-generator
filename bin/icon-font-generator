@@ -14,7 +14,7 @@ const glob = require('glob')
  */
 function init() {
   const args = minimist(process.argv.slice(2))
-  const types = (args.types || 'svg,ttf,woff,eot')
+  const types = (args.types || 'svg,ttf,woff,woff2,eot')
   .split(',')
   .map(ext => ext.trim())
   const options = {
