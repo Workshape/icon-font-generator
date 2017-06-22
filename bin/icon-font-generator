@@ -102,7 +102,7 @@ function showHelp() {
     '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +
     '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
     '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
-    '  --htmtp          '.bold + 'HTML handlebars template path (Optional)\n' +
+    '  --htmltp         '.bold + 'HTML handlebars template path (Optional)\n' +
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
     '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
     '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +
