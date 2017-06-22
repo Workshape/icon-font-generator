@@ -41,7 +41,7 @@ Options:
   --html           Generate HTML preview file if true (Default: true)
   --htmlpath       HTML output path (Defaults to <out>/<name>.html)
   --types          Font types - (Defaults to 'svg, ttf, woff, woff2, eot')
-  --htmtp          HTML handlebars template path (Optional)
+  --htmltp         HTML handlebars template path (Optional)
   -j, --json       Generate JSON map file if true (Default: true)
   --jsonpath       JSON output path (Defaults to <out>/<name>.json)
   -p, --prefix     CSS classname prefix for icons (Default: icon)
