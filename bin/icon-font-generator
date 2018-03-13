@@ -32,6 +32,8 @@ function init() {
     htmlPath           : args.htmlpath,
     htmlTemplate       : args.htmltp,
     silent             : args.s || args.silent || false,
+    startCodepoint     : args.codepoint,
+    codepoints         : args.codepoints,
     classPrefix        : args.p || args.prefix,
     baseTag            : args.t || args.tag,
     normalize          : args.normalize,
@@ -103,6 +105,8 @@ function showHelp() {
     '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
     '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
     '  --htmltp         '.bold + 'HTML handlebars template path (Optional)\n' +
+    '  --codepoint      '.bold + 'The starting character code to count up from (Optional)\n' +
+    '  --codepoints     '.bold + 'Path to explicit character code mapping JSON file (Optional)\n' + 
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
     '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
     '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +

@@ -42,6 +42,8 @@ Options:
   --htmlpath       HTML output path (Defaults to <out>/<name>.html)
   --types          Font types - (Defaults to 'svg, ttf, woff, woff2, eot')
   --htmltp         HTML handlebars template path (Optional)
+  --codepoint      The starting character code (Optional)
+  --codepoints     Path to character code JSON map file (Optional)
   -j, --json       Generate JSON map file if true (Default: true)
   --jsonpath       JSON output path (Defaults to <out>/<name>.json)
   -p, --prefix     CSS classname prefix for icons (Default: icon)
