@@ -1,6 +1,6 @@
 {
   "name": "icon-font-generator",
-  "version": "1.1.2",
+  "version": "2.1.2",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
   "main": "index.js",
   "repository": {
@@ -15,9 +15,18 @@
   "license": "MIT",
   "dependencies": {
     "async": "^2.4.1",
+    "bluebird": "^3.5.1",
     "colors": "^1.1.2",
     "glob": "^7.1.2",
     "minimist": "^1.2.0",
+    "promisify-all": "^1.0.0",
     "webfonts-generator": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-recommended": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=v8.1.0"
   }
 }

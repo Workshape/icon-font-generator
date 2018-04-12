@@ -4,20 +4,24 @@
 
 require('colors')
 
+const { removeUndefinedKeys } = require('../lib/utils')
 const fontGenerator = require('../lib/index')
 const errors = require('../lib/errors')
 const minimist = require('minimist')
 const glob = require('glob')
 
-/*
+/**
  * Initialise script and options
+ *
+ * @return {void}
  */
 function init() {
   const args = minimist(process.argv.slice(2))
   const types = (args.types || 'svg,ttf,woff,woff2,eot')
-  .split(',')
-  .map(ext => ext.trim())
-  const options = {
+    .split(',')
+    .map(ext => ext.trim())
+
+  const options = removeUndefinedKeys({
     paths              : getPaths(args._),
     outputDir          : args.o || args.out,
     fontName           : args.n || args.name,
@@ -42,7 +46,8 @@ function init() {
     fixedWidth         : args.mono,
     fontHeight         : args.height,
     centerHorizontally : args.center
-  }
+  })
+
   const calledEmpty = Object.keys(args).length === 1 && args._.length === 0
   const formats = [ 'html', 'css', 'json' ]
 
@@ -62,19 +67,21 @@ function init() {
   run(options)
 }
 
-/*
+/**
  * Run icon font kit creation
  *
- * @param {Object} options
+ * @param  {Object} options
+ * @return {void}
  */
 function run(options) {
-  fontGenerator.generate(options, err => err ? fail(err) : null)
+  fontGenerator.generate(options, err => err ? fail(err) : null).catch(err => fail(err))
 }
 
-/*
+/**
  * Fail - Interrut process and log validation errors or throw unhandled exceptions
  *
- * @param {Error|ValidationError} err
+ * @param  {Error|ValidationError} err
+ * @return {void}
  */
 function fail(err) {
   if (typeof err === 'string' || err instanceof errors.ValidationError) {
@@ -85,8 +92,10 @@ function fail(err) {
   if (err instanceof Error) { throw err }
 }
 
-/*
+/**
  * Display usage
+ *
+ * @return {void}
  */
 function showHelp() {
   console.log(
@@ -106,7 +115,7 @@ function showHelp() {
     '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
     '  --htmltp         '.bold + 'HTML handlebars template path (Optional)\n' +
     '  --codepoint      '.bold + 'The starting character code to count up from (Optional)\n' +
-    '  --codepoints     '.bold + 'Path to explicit character code mapping JSON file (Optional)\n' + 
+    '  --codepoints     '.bold + 'Path to explicit character code mapping JSON file (Optional)\n' +
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
     '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
     '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +
@@ -120,10 +129,10 @@ function showHelp() {
   )
 }
 
-/*
+/**
  * Resolve globs
  *
- * @param {String} globs
+ * @param  {String} globs
  * @return {[String]}
  */
 function getPaths(globs) {
