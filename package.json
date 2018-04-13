@@ -14,8 +14,6 @@
   "author": "Tancredi Trugenberger",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "colors": "^1.1.2",
     "glob": "^7.1.2",
     "minimist": "^1.2.0",
     "webfonts-generator": "^0.4.0"
