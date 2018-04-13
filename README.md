@@ -8,7 +8,7 @@
 
 *!!* `icon-font-generator` requires Node.js `>= v8.1.0` - is you wish to run on a lower version, use [v1.1.2](https://github.com/Workshape/icon-font-generator/releases/tag/v1.1.2)
 
-### Changelog
+### Upgrading from v1.x.x
 
 If you're upgrading from `v1.x.x` to `v2.x.x` - here's the changelog and thoubleshooting: https://github.com/Workshape/icon-font-generator/releases/tag/v2.1.2
 
