@@ -4,15 +4,18 @@
 
 > Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files
 
-### Requirements
-
-`icon-font-generator` requires Node.js `>= v8.1.0` - is you wish to run on a lower version, use [v1.1.2](https://github.com/Workshape/icon-font-generator/releases/tag/v1.1.2)
-
 ### Intro
 
 This cli utility is ment to make webfont icon sets creation from the command line really simple - It wraps and pre-configures [webfonts-generator](https://www.npmjs.com/package/webfonts-generator), but allows for some degree of customisation.
 
 It also does a couple extra things such as creating a .json file containing the icons to unicode characters map, which may be later used in styles, templates, etc..
+
+#### Upgrading from v1.x.x
+
+**!!** If you're upgrading from `v1.x.x` to `v2.x.x` - here's the changelog and thoubleshooting: https://github.com/Workshape/icon-font-generator/releases/tag/v2.1.2
+
+**!!** `icon-font-generator` `v2.x.x >=` requires Node.js `>= v8.1.0` - is you wish to run on a lower version, use [v1.1.2](https://github.com/Workshape/icon-font-generator/releases/tag/v1.1.2)
+
 
 ### Install
 
