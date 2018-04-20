@@ -1,6 +1,6 @@
-![Icon](http://i.cubeupload.com/qXmZhu.png)
+![Icon](http://i.cubeupload.com/EA6yWa.png)
 
-## icon-font-generator
+## Icon font generator
 
 ![Screenshot](https://i.cubeupload.com/eYw6vj.png)
 
