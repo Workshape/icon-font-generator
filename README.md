@@ -1,4 +1,4 @@
-![Icon](http://i.cubeupload.com/ZwEwk8.png)
+![Icon](http://i.cubeupload.com/EA6yWa.png)
 
 ## Icon font generator
 
