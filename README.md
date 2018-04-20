@@ -1,6 +1,8 @@
-## icon-font-generator
+![Icon](http://i.cubeupload.com/EA6yWa.png)
 
-![Screenshot](http://i.cubeupload.com/IMOHPK.png)
+## Icon font generator
+
+![Screenshot](https://i.cubeupload.com/eYw6vj.png)
 
 > Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files
 
