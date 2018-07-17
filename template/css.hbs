@@ -3,11 +3,11 @@
     src: {{{ src }}};
 }
 
-{{ baseTag }} {
+{{ baseSelector }} {
     line-height: 1;
 }
 
-{{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
+{{ baseSelector }}:before {
     font-family: {{ fontName }} !important;
     font-style: normal;
     font-weight: normal !important;
