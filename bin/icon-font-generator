@@ -85,7 +85,7 @@ function run(options) {
  */
 function fail(err) {
   if (typeof err === 'string' || err instanceof errors.ValidationError) {
-    console.error(err.message.red)
+    console.error(err.red || err.message.red)
     process.exit()
   }
 
