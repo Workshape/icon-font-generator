@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ fontName }}</title>
+
     <style>
 
         body {
@@ -51,10 +52,9 @@
             border-radius: 0 0 3px 3px;
             color: #666;
         }
-
-        {{{ styles }}}
-
     </style>
+
+    <link rel="stylesheet" type="text/css" href="{{ htmlCssRelativePath }}" />
 </head>
 <body>
 
@@ -64,7 +64,7 @@
 
         <div class="preview">
             <span class="inner">
-                <{{ ../baseTag }} class="{{ ../classPrefix }}{{ this }}"></{{ ../baseTag }}>
+                <{{ ../baseTag }} class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></{{ ../baseTag }}>
             </span>
             <br>
             <span class='label'>{{ this }}</span>
