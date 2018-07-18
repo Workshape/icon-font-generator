@@ -3,11 +3,11 @@
     src: {{{ src }}};
 }
 
-{{ baseTag }} {
-    line-height: 1;
-}
-
+{{# if baseSelector }}
+{{ baseSelector }}:before {
+{{ else }}
 {{ baseTag }}[class^="{{classPrefix}}"]:before, {{ baseTag }}[class*=" {{classPrefix}}"]:before {
+{{/ if }}
     font-family: {{ fontName }} !important;
     font-style: normal;
     font-weight: normal !important;
@@ -19,7 +19,11 @@
 }
 
 {{# each codepoints }}
-.{{ ../classPrefix }}{{ @key }}:before {
+{{# if ../baseSelector }}
+{{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ else }}
+{{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+{{/ if }}
     content: "\\{{ this }}";
 }
 {{/ each }}

@@ -29,6 +29,7 @@ function init() {
     types              : types,
     css                : args.c || args.css,
     cssPath            : args.csspath,
+    cssFontsUrl        : args.cssfontsurl,
     cssTemplate        : args.csstp,
     json               : args.j || args.json,
     jsonPath           : args.jsonpath,
@@ -40,6 +41,7 @@ function init() {
     codepoints         : args.codepoints,
     classPrefix        : args.p || args.prefix,
     baseTag            : args.t || args.tag,
+    baseSelector       : args.selector,
     normalize          : args.normalize,
     round              : args.round,
     descent            : args.descent,
@@ -110,6 +112,7 @@ function showHelp() {
     '  -c, --css        '.bold + 'Generate CSS file if true (Default: true)\n' +
     '  --types          '.bold + 'Comma delimited list of font types (Defaults to svg,ttf,woff,eot)\n' +
     '  --csspath        '.bold + 'CSS output path (Defaults to <out>/<name>.css)\n' +
+    '  --cssfontsurl    '.bold + 'CSS fonts directory url (Defaults to relative path)\n' +
     '  --csstp          '.bold + 'CSS handlebars template path (Optional)\n' +
     '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
     '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
@@ -119,7 +122,8 @@ function showHelp() {
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
     '  --jsonpath       '.bold + 'JSON output path (Defaults to <out>/<name>.json)\n' +
     '  -p, --prefix     '.bold + 'CSS classname prefix for icons (Default: icon)\n' +
-    '  -t, --tag        '.bold + 'CSS base selector for icons (Default: i)' +
+    '  -t, --tag        '.bold + 'CSS base selector for icons (Default: i)\n' +
+    '  --selector       '.bold + 'Use a selector instead of \'tag + prefix\' (Default: null)\n' +
     '  --normalize      '.bold + 'Normalize icons sizes (Default: false)\n' +
     '  --round          '.bold + 'Setup SVG rounding (Default: 10e12)\n' +
     '  --descent        '.bold + 'Offset applied to the baseline (Default: 0)\n' +
