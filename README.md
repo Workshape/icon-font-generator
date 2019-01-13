@@ -1,8 +1,8 @@
-![Icon](http://i.cubeupload.com/EA6yWa.png)
+![Icon](https://camo.githubusercontent.com/2b418776b6cc9cb7d90c68905d3381674f13d7ec/687474703a2f2f692e6375626575706c6f61642e636f6d2f4541367957612e706e67)
 
 ## Icon font generator
 
-![Screenshot](https://i.cubeupload.com/eYw6vj.png)
+![Screenshot](https://camo.githubusercontent.com/7aaef96033be671fa29297c0efd6c50f97a502f6/68747470733a2f2f692e6375626575706c6f61642e636f6d2f65597736766a2e706e67)
 
 > Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files
 
