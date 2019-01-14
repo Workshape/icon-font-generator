@@ -5,6 +5,7 @@
 require('colors')
 
 const { removeUndefinedKeys } = require('../lib/utils')
+const { FORMATS } = require('../lib/constants')
 const fontGenerator = require('../lib/index')
 const errors = require('../lib/errors')
 const minimist = require('minimist')
@@ -51,10 +52,9 @@ function init() {
   })
 
   const calledEmpty = Object.keys(args).length === 1 && args._.length === 0
-  const formats = [ 'html', 'css', 'json' ]
 
   // Parse Boolean values that default to true
-  formats.forEach(key => {
+  FORMATS.forEach(key => {
     if (typeof options[key] !== 'undefined') {
       options[key] = options[key] === 'true'
     }
