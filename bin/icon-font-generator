@@ -36,6 +36,14 @@ function init() {
     html               : args.html,
     htmlPath           : args.htmlpath,
     htmlTemplate       : args.htmltp,
+	cs                 : args.cs,
+	csPath             : args.cspath,
+	csName             : args.csname,
+	csNamespace        : args.csnamespace,
+	csPrefix           : args.csprefix,
+	xamarin            : args.xamarin,
+	xamarinPath        : args.xamarinpath,
+	xamarinPrefix      : args.xamarinprefix,
     silent             : args.s || args.silent || false,
     startCodepoint     : args.codepoint,
     codepoints         : args.codepoints,
@@ -51,7 +59,7 @@ function init() {
   })
 
   const calledEmpty = Object.keys(args).length === 1 && args._.length === 0
-  const formats = [ 'html', 'css', 'json' ]
+  const formats = [ 'html', 'css', 'json', 'cs', 'xamarin' ]
 
   // Parse Boolean values that default to true
   formats.forEach(key => {
@@ -117,6 +125,14 @@ function showHelp() {
     '  --html           '.bold + 'Generate HTML preview file if true (Default: true)\n' +
     '  --htmlpath       '.bold + 'HTML output path (Defaults to <out>/<name>.html)\n' +
     '  --htmltp         '.bold + 'HTML handlebars template path (Optional)\n' +
+	'  --cs             '.bold + 'Generate CS file if true (Default: true)\n' +
+	'  --cspath         '.bold + 'CS output path (Defaults to <out>/<name>.cs)\n' +
+	'  --csname         '.bold + 'CS class name (Defaults to IconFontConstants)\n' +
+	'  --csnamespace    '.bold + 'CS namespace (Defaults to System)\n' +
+	'  --csprefix       '.bold + 'Prefix for CS class members (Defaults to Icon_)\n' +
+	'  --xamarin        '.bold + 'Generate Xamarin ResourceDictionary (*.xaml) if true (Default: true)\n' +
+	'  --xamarinpath    '.bold + 'Xamarin ResourceDictionary output path (Defaults to <out>/<name>.xaml)\n' +
+	'  --xamarinprefix  '.bold + 'Prefix for Xamarin ResourceDictionary entries (Defaults to Icon_)\n' +
     '  --codepoint      '.bold + 'The starting character code to count up from (Optional)\n' +
     '  --codepoints     '.bold + 'Path to explicit character code mapping JSON file (Optional)\n' +
     '  -j, --json       '.bold + 'Generate JSON map file if true (Default: true)\n' +
