@@ -1,6 +1,6 @@
 {
   "name": "icon-font-generator",
-  "version": "2.1.10",
+  "version": "2.1.11",
   "description": "Easy-to-use, pre-configured cli tool to generate webfont icon kits from a bunch of .svg files",
   "main": "index.js",
   "repository": {
