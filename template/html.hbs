@@ -64,10 +64,10 @@
 
         <div class="preview">
             <span class="inner">
-                <{{ ../baseTag }} class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></{{ ../baseTag }}>
+                <{{ ../baseTag }} class="{{ ../baseClassNames }}{{ ../classPrefix }}{{ this }}"></{{ ../baseTag }}>
             </span>
             <br>
-            <span class='label'>{{ this }}</span>
+            <span class='label'>{{ ../baseClassNames }}{{ ../classPrefix }}{{ this }}</span>
         </div>
 
     {{/ each }}
